@@ -3,6 +3,8 @@
 """
 import sys
 sys.path.append('/home/yilan/yantao/workspace/projects/dr_cvpr20/')
+import cv2
+import matplotlib.pyplot as plt
 import numpy as np
 import os
 from PIL import Image
@@ -45,6 +47,4 @@ for idx, temp_image_name in enumerate(tqdm(images_name)):
     img_adv_pil = Image.fromarray((np.transpose(adv_var[0].cpu().numpy(), (1, 2, 0)) * 255).astype(np.uint8))
     img_adv_pil.save(os.path.join(outout_dir, '{}_img_adv.png').format(temp_img_name_noext))
 
-    for layer_idx in range(len(features_ori)):
-        fe_ori = features_ori[layer_idx][0]
-        pdb.set_trace()
+
