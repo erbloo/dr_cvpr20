@@ -1,7 +1,9 @@
+""" Adapted VGG pytorch model that used as surrogate. """
 import torchvision.models as models
 import torch
 
 import pdb
+
 
 class Vgg16(torch.nn.Module):
     def __init__(self):

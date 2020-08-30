@@ -1,7 +1,10 @@
+""" Script for api utils. """
 from google.cloud import vision
 from google.cloud.vision import types
 import io
+
 import pdb
+
 
 def detect_label_numpy(image):
     client = vision.ImageAnnotatorClient()
@@ -27,7 +30,6 @@ def detect_label_file(path):
         return []
     labels = response.label_annotations
     return labels
-
 
 def detect_objects_numpy(image):
 
@@ -67,9 +69,7 @@ def detect_objects_file(path):
         for vertex in object_.bounding_poly.normalized_vertices:
             print(' - ({}, {})'.format(vertex.x, vertex.y))
     '''
-    
     return objects
-
 
 def detect_text_numpy(image):
     """Detects text in the file."""
@@ -81,7 +81,6 @@ def detect_text_numpy(image):
     if len(texts) > 0:
         return texts[0].description.strip()
     return None
-
 
 def detect_text_file(path):
     """Detects text in the file."""
@@ -181,7 +180,6 @@ def detect_faces_file(path):
         out_dic['boxes'].append(bbox)
         out_dic['scores'].append(face.detection_confidence)
     return out_dic
-    
 
 def googleDet_to_Dictionary(google_det, image_hw):
     '''transfer google object detection output to dictrionary of lists.

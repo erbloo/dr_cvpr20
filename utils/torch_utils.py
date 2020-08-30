@@ -1,6 +1,7 @@
+""" Script for torch utils. """
+import numpy as np
 import torch
 from torch.autograd import Variable
-import numpy as np
 
 def numpy_to_variable(image, device=torch.device('cuda:0')):
     x_image = np.expand_dims(image, axis=0)

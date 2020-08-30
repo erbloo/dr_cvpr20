@@ -1,13 +1,14 @@
-from PIL import Image, ImageFont, ImageDraw
-import numpy as np
-from io import BytesIO
-from google.cloud.vision import types
-import matplotlib.pyplot as plt
-from tqdm import tqdm
+""" Image utils."""
 import cv2
+from io import BytesIO
+import matplotlib.pyplot as plt
+import numpy as np
 import os
+from PIL import Image, ImageFont, ImageDraw
+from tqdm import tqdm
 
 import pdb
+
 
 def load_image(
         shape=(224, 224), bounds=(0, 1), dtype=np.float32,
@@ -55,6 +56,8 @@ def save_image(image):
     Image.fromarray(image).save("./out/test.jpg")    
 
 def numpy_to_bytes(image, format='JPEG'):
+    from google.cloud.vision import types
+
     if image.shape[0] == 3:
         image = np.transpose(image, (1, 2, 0))
     if image.dtype is not np.uint8:
