@@ -24,9 +24,9 @@ class DispersionAttack_gpu(object):
         for p in self.model.parameters():
             p.requires_grad = False
         self.model.eval()
-        X_var = copy.deepcopy(X_nat_var)
+        X_var = torch.clone(X_nat_var)
         for i in range(self.steps):
-            X_var = X_var.requires_grad_()
+            X_var.retain_grad()
             internal_features, pred = self.model.prediction(X_var, internal=internal)
             logit = internal_features[attack_layer_idx]
             loss = -1 * logit.std()
