@@ -23,3 +23,15 @@ Experimental data is included in [dr_images_cvpr20](https://github.com/erbloo/dr
 
 ### More details are shown in "https://github.com/erbloo/bbox_std"
 
+
+### Citing this work
+If you find this work is useful in your research, please consider citing:
+```
+    @inproceedings{lu2020enhancing,
+      title={Enhancing cross-task black-box transferability of adversarial examples with dispersion reduction},
+      author={Lu, Yantao and Jia, Yunhan and Wang, Jianyu and Li, Bai and Chai, Weiheng and Carin, Lawrence and Velipasalar, Senem},
+      booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+      pages={940--949},
+      year={2020}
+    }
+```
