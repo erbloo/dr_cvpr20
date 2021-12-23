@@ -21,9 +21,6 @@ Experimental data is included in [dr_images_cvpr20](https://github.com/erbloo/dr
 ### Please find the attack example in `example.ipynb`
 
 
-### More details are shown in "https://github.com/erbloo/bbox_std"
-
-
 ### Citing this work
 If you find this work is useful in your research, please consider citing:
 ```
